@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-10T18:47:25.978Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="G75CctI1mDDOfgUY93mH" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-13T08:36:58.786Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="zklwxV9M_ZadCzV5tRjn" version="22.0.8" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1247" dy="1828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2206" dy="2335" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -48,13 +48,25 @@
         <mxCell id="VXojqlhAzCkJJxPkdGVq-14" value="Draw card and append to player hand." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="430" y="650" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="VXojqlhAzCkJJxPkdGVq-28" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="VXojqlhAzCkJJxPkdGVq-16" target="VXojqlhAzCkJJxPkdGVq-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VXojqlhAzCkJJxPkdGVq-29" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="VXojqlhAzCkJJxPkdGVq-16" target="VXojqlhAzCkJJxPkdGVq-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="VXojqlhAzCkJJxPkdGVq-16" value="Blackjack?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="260" y="520" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="VXojqlhAzCkJJxPkdGVq-17" value="Final hand: Show all player cards. Calculate final player score." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="VXojqlhAzCkJJxPkdGVq-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="VXojqlhAzCkJJxPkdGVq-17" target="VXojqlhAzCkJJxPkdGVq-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VXojqlhAzCkJJxPkdGVq-17" value="Final hand: Show all player cards. Calculate final player score." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="60" y="650" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="VXojqlhAzCkJJxPkdGVq-19" value="Computer draws card" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="VXojqlhAzCkJJxPkdGVq-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="VXojqlhAzCkJJxPkdGVq-19" target="VXojqlhAzCkJJxPkdGVq-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VXojqlhAzCkJJxPkdGVq-19" value="Dealer draws cards until score is 17 or higher." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="60" y="740" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="VXojqlhAzCkJJxPkdGVq-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="VXojqlhAzCkJJxPkdGVq-20" target="VXojqlhAzCkJJxPkdGVq-21">
@@ -68,6 +80,18 @@
         </mxCell>
         <mxCell id="VXojqlhAzCkJJxPkdGVq-21" value="Bust?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="260" y="420" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VXojqlhAzCkJJxPkdGVq-31" value="Compare scores" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="60" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VXojqlhAzCkJJxPkdGVq-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="VXojqlhAzCkJJxPkdGVq-32" target="VXojqlhAzCkJJxPkdGVq-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VXojqlhAzCkJJxPkdGVq-32" value="Determine wiinner" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="560" y="820" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VXojqlhAzCkJJxPkdGVq-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.667;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="VXojqlhAzCkJJxPkdGVq-31" target="VXojqlhAzCkJJxPkdGVq-32">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

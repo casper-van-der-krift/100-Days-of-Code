@@ -1,65 +1,44 @@
-##################### Extra Hard Starting Project ######################
-
-import datetime as dt
-import smtplib
-import pandas as pd
-from random import randint
+# Ik heb al je imports in 1 file gezet, maakt het ook overzichtelijker
+from src.config import *
+# Ik heb je email functies in een andere file gezet, maakt het wat overzichtelijker
+from src.utils import write_email, send_email
 
 
-def write_email(name: str) -> str:
-    """Chooses a random integer between 1-3 that corresponds to three templates of happy birthday letters.
-    Takes a name as input that will replace the [NAME] placeholder in the templates.
-    Returns the email contents with name as a string."""
-    random_letter_file = f"letter_{randint(1, 3)}.txt"
-    random_letter_path = f"./letter_templates/{random_letter_file}"
+def get_birthdays(df: pd.DataFrame):
+    # 2. Filter dataframe on birthdays matching today
+    now = dt.datetime.now()
+    today = now.day
+    this_month = now.month
 
-    with open(random_letter_path, mode='r') as file:
-        contents = file.read()
+    current_month_day_filter = (df.month == this_month) & (df.day == today)
+    df_filtered = df[current_month_day_filter]
+    
+    # Onderstaande lines zijn niet nodig. 
+    # Als je die 'empty' variable zo gebruikt is je code iets minder goed te lezen dan wanneer je gewoon zegt 'if not df.empty:'
+    # empty = df_filtered.empty
 
-    new_contents = contents.replace("[NAME]", name)
-
-    return new_contents
-
-
-# 1. Store .csv as dataframe
-df = pd.read_csv('birthdays.csv')
-
-# 2. Filter dataframe on birthdays matching today
-now = dt.datetime.now()
-today = now.day
-this_month = now.month
-
-current_month_day_filter = (df.month == this_month) & (df.day == today)
-df_filtered = df[current_month_day_filter]
-
-empty = df_filtered.empty
-
-birthday_dict_list = df_filtered.to_dict(orient='records')
+    # Al hoewel het niet slecht is, hoeft onderstaande ook niet perse, je kunt namelijk ook over rijen van een dataframe loopen
+    # birthday_dict_list = df_filtered.to_dict(orient='records')
+    return df_filtered
 
 
-# 3. If there are matches - i.e. the dataframe is not empty - email to each person in the dataframe
+if __name__ == "__main__":
+    # ik zou altijd een if __name__ statement in je script zetten, dat maakt de "flow" net wat overzichtelijker
+    # vervolgens is het onderstaande een stylistische keuze, want je kunt data laden op 100 verschillende manieren. 
+    df = pd.read_csv(
+        join(DATA_FOLDER, BIRTHDAY_FILE)
+    )
 
-if not empty:
+    # zet individuele onderdelen in een functie
+    bd_df = get_birthdays(df)
 
-    # Setup email parameters
-    my_identity = "yung.biblebelt"
-    my_password = "%$qgwJ*EJ89&gJ%"
-    app_password = "nktimklcrbvmvoef"
-    my_gmail_address = f"{my_identity}@gmail.com"
+    if not bd_df.empty:
+        send_emails(bd_df)
 
-    # Get matching persons name and email and create a randomly chosen birthday email
-    for person in birthday_dict_list:
-        birthday_message = write_email(name=person['name'])
-        email = person['email']
 
-        email_message = f"Subject: Happy Birthday!\n\n{birthday_message}"
 
-        # Use smtplib to create email connection and send messages
-        with smtplib.SMTP("smtp.gmail.com", 587) as connection:
-            connection.starttls()
-            connection.login(user=my_gmail_address, password=app_password)
-            connection.sendmail(from_addr=my_gmail_address, to_addrs=email,
-                                msg=email_message)
+
+
 
 
 

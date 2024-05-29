@@ -2,6 +2,7 @@ import requests
 from datetime import datetime
 import smtplib
 from os import environ
+import re
 
 MY_LAT = 52.162970
 MY_LONG = 5.395200
